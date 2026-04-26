@@ -139,7 +139,7 @@ export default function LoginPage() {
         {/* Bottom */}
         <div className="relative z-10">
           <p className="text-xs" style={{ color: 'var(--color-text-muted)' }}>
-            © 2024 ArsipKu — Sistem Arsip Akademik Digital
+            © 2026 ArsipKu — Sistem Arsip Akademik Digital
           </p>
         </div>
       </div>
