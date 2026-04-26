@@ -82,7 +82,7 @@ export async function GET(
     // Cek apakah ini request preview (bukan download)
     const wantsPreview = request.nextUrl.searchParams.get('mode') === 'preview'
 
-    return new NextResponse(decryptedBuffer, {
+    return new NextResponse(new Uint8Array(decryptedBuffer), {
       headers: {
         'Content-Type':        mimeType,
         'Content-Disposition': wantsPreview
