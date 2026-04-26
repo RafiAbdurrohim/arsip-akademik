@@ -1,0 +1,108 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-bg: #0a0f0d;
+  --color-bg-secondary: #0f1a14;
+  --color-bg-card: #111c16;
+  --color-bg-elevated: #162119;
+  --color-border: #1e3028;
+  --color-border-light: #243d2e;
+  --color-brand: #25a368;
+  --color-brand-light: #48bf85;
+  --color-brand-dim: #188453;
+  --color-text-primary: #e8f5ee;
+  --color-text-secondary: #8fba9e;
+  --color-text-muted: #4d7a5e;
+  --color-accent-gold: #c9a84c;
+  --color-accent-red: #e05252;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text-primary);
+  min-height: 100vh;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-bg-secondary);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-border-light);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-brand-dim);
+}
+
+/* Selection */
+::selection {
+  background: var(--color-brand);
+  color: white;
+}
+
+/* Focus ring */
+:focus-visible {
+  outline: 2px solid var(--color-brand);
+  outline-offset: 2px;
+}
+
+/* Custom utilities */
+@layer utilities {
+  .text-brand { color: var(--color-brand); }
+  .text-brand-light { color: var(--color-brand-light); }
+  .text-secondary { color: var(--color-text-secondary); }
+  .text-muted { color: var(--color-text-muted); }
+  
+  .bg-card { background-color: var(--color-bg-card); }
+  .bg-elevated { background-color: var(--color-bg-elevated); }
+  
+  .border-subtle { border-color: var(--color-border); }
+  .border-light { border-color: var(--color-border-light); }
+  
+  .glass {
+    background: rgba(17, 28, 22, 0.8);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--color-border);
+  }
+  
+  .glow {
+    box-shadow: 0 0 20px rgba(37, 163, 104, 0.15);
+  }
+  
+  .glow-strong {
+    box-shadow: 0 0 40px rgba(37, 163, 104, 0.25);
+  }
+}
+
+/* Animations */
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.skeleton {
+  background: linear-gradient(
+    90deg,
+    var(--color-bg-card) 25%,
+    var(--color-bg-elevated) 50%,
+    var(--color-bg-card) 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
